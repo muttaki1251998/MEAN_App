@@ -1,0 +1,22 @@
+{
+  "name": "meanapp",
+  "version": "1.0.0",
+  "description": "Mean Log in and registration system with private routes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muttaki Khan",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.17.5",
+    "express": "*",
+    "body-parser": "*",
+    "bcryptjs": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "cors": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  }
+}
