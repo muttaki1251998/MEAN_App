@@ -26,6 +26,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// passport mw
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./config/passport")(passport);
+
 var users = require("./routes/users");
 var index = require("./routes/index");
 
