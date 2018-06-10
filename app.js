@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
+const cors = require("cors");
 const config = require("./config/database");
 
 // database connection
@@ -19,16 +20,18 @@ mongoose.connection.on('err', (err) => {
 // Init
 var app = express();
 
+
+// body-parser mw
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 var users = require("./routes/users");
 var index = require("./routes/index");
 
 // Set up routes
 app.use("/", index);
 app.use("/users", users);
-
-// body-parser mw
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
