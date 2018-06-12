@@ -12,7 +12,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { ValidateService } from "./services/validate.service";
+import { AuthService } from "./services/auth.service";
 import { FlashMessagesModule } from "angular2-flash-messages";
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
@@ -33,11 +35,11 @@ const appRoutes: Routes = [
     LoginComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpModule,
     RouterModule.forRoot(appRoutes),
     FormsModule, FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
