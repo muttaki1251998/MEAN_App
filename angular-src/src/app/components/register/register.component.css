@@ -1,0 +1,19 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    background-size: cover;
+    background-position: center;
+}
+label{
+    color: #fff;
+}
+.form-control{
+    width: 40%;
+}
+
+.jumbotron {    
+    background:  no-repeat center center fixed;   
+    height: 100%;
+    border-radius: 0;    
+  }
