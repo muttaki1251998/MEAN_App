@@ -7,21 +7,21 @@ var uniqueValidator = require('mongoose-unique-validator');
 var UserSchema = mongoose.Schema({
     username:{
         type: String,
-        unique: true,
+        //unique: true,
         trim: true,
         minLength: 1,
         required: true
     },
     name:{
         type: String,
-        unique: true,
+       // unique: true,
         trim: true,
         minLength: 1,
         required: true
     },
     email:{
         type: String,
-        unique: true,
+        //unique: true,
         trim: true,
         minLength: 1,
         required: true,

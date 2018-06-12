@@ -58,6 +58,8 @@ export class RegisterComponent implements OnInit {
       this._routers.navigate(['/register']);
     }
   });
+
+ 
 }
 
 

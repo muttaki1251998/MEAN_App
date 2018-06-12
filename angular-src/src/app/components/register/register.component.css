@@ -1,19 +1,8 @@
-html, body{
-    height: 100%;
-    width: 100%;
-    overflow-y: hidden;
-    background-size: cover;
-    background-position: center;
-}
 label{
-    color: #fff;
+    color: rgb(57, 54, 82);
+    font-weight: bold;
 }
 .form-control{
     width: 40%;
+    border-radius: 0;
 }
-
-.jumbotron {    
-    background:  no-repeat center center fixed;   
-    height: 100%;
-    border-radius: 0;    
-  }
