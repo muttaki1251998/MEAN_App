@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{    
-    background-image: url("../../public/pexels-photo-407233.jpeg");    
+    background-image: url("./bg.jpeg");    
 
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;

@@ -33,16 +33,20 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 var users = require("./routes/users");
-var index = require("./routes/index");
 
 // Set up routes
-app.use("/", index);
+
 app.use("/users", users);
+
+// Index route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+})
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-var port = 8000;
+var port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log("Server started on port " + port);
 });
