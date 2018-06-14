@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
   password: String;
 
   constructor(
-    private _authService: AuthService,
-    private _flashMsg: FlashMessagesService,
-    private _router: Router
+    private authService: AuthService,
+    private flashMsg: FlashMessagesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,14 +29,14 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
-    this._authService.authenticateUser(user).subscribe(data => {
+    this.authService.authenticateUser(user).subscribe(data => {
       if(data.success){
-        this._authService.storeUserData(data.token, data.user);
-        this._flashMsg.show(("Welcome to TrueHeart"), {cssClass: "alert-success", timeout: 3000});
-        this._router.navigate(['/dashboard']);
+        this.authService.storeUserData(data.token, data.user);
+        this.flashMsg.show(("Welcome to TrueHeart"), {cssClass: "alert-success", timeout: 3000});
+        this.router.navigate(['/dashboard']);
       }else{
-        this._flashMsg.show(("Invalid credentials"), {cssClass: "alert-danger", timeout: 3000});
-        this._router.navigate(['/login']);
+        this.flashMsg.show(("Invalid credentials"), {cssClass: "alert-danger", timeout: 3000});
+        this.router.navigate(['/login']);
       }
     })
 
