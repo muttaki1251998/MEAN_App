@@ -38,10 +38,7 @@ var users = require("./routes/users");
 
 app.use("/users", users);
 
-// Index route
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-})
+
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
